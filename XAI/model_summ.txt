@@ -1,0 +1,20 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ resnet50 (Functional)       (None, 4, 4, 2048)        23587712
+
+ global_average_pooling2d (  (None, 2048)              0
+ GlobalAveragePooling2D)
+
+ dense (Dense)               (None, 256)               524544
+
+ dropout (Dropout)           (None, 256)               0
+
+ dense_1 (Dense)             (None, 4)                 1028
+
+=================================================================
+Total params: 24113284 (91.98 MB)
+Trainable params: 525572 (2.00 MB)
+Non-trainable params: 23587712 (89.98 MB)
+_________________________________________________________________

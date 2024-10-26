@@ -1,0 +1,59 @@
+PS C:\Users\Medha Agarwal\Desktop\GANs> cd "c:\Users\Medha Agarwal\Desktop\GANs"
+PS C:\Users\Medha Agarwal\Desktop\GANs> python -u "c:\Users\Medha Agarwal\Desktop\GANs\pre.py"
+Found 5712 images belonging to 4 classes.
+Class indices: {'glioma': 0, 'meningioma': 1, 'notumor': 2, 'pituitary': 3}
+Original dataset shape: (5712, 128, 128, 3), Labels shape: (5712, 4)
+Augmented dataset shape: (5000, 128, 128, 1)
+Converted augmented images to RGB: (5000, 128, 128, 3)
+Augmented labels shape: (5000, 4)
+Combined dataset shape: (10712, 128, 128, 3), Labels shape: (10712, 4)
+2024-09-26 16:00:45.410462: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5
+94765736/94765736 [==============================] - 45s 0us/step
+Epoch 1/20
+268/268 [==============================] - ETA: 0s - loss: 1.3662 - accuracy: 0.3342C:\Users\Medha Agarwal\AppData\Roaming\Python\Python38\site-packages\keras\src\engine\training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+268/268 [==============================] - 88s 324ms/step - loss: 1.3662 - accuracy: 0.3342 - val_loss: 1.2435 - val_accuracy: 0.5245
+Epoch 2/20
+268/268 [==============================] - 88s 328ms/step - loss: 1.2370 - accuracy: 0.4447 - val_loss: 1.1915 - val_accuracy: 0.5152
+Epoch 3/20
+268/268 [==============================] - 87s 323ms/step - loss: 1.1834 - accuracy: 0.4920 - val_loss: 1.1568 - val_accuracy: 0.5189
+Epoch 4/20
+268/268 [==============================] - 94s 350ms/step - loss: 1.1469 - accuracy: 0.5218 - val_loss: 1.1221 - val_accuracy: 0.5656
+Epoch 5/20
+268/268 [==============================] - 91s 340ms/step - loss: 1.1161 - accuracy: 0.5500 - val_loss: 1.0932 - val_accuracy: 0.5772
+Epoch 6/20
+268/268 [==============================] - 92s 343ms/step - loss: 1.0903 - accuracy: 0.5614 - val_loss: 1.0673 - val_accuracy: 0.5861
+Epoch 7/20
+268/268 [==============================] - 89s 334ms/step - loss: 1.0667 - accuracy: 0.5760 - val_loss: 1.0443 - val_accuracy: 0.6015
+Epoch 8/20
+268/268 [==============================] - 93s 346ms/step - loss: 1.0448 - accuracy: 0.5903 - val_loss: 1.0243 - val_accuracy: 0.6150
+Epoch 9/20
+268/268 [==============================] - 94s 352ms/step - loss: 1.0250 - accuracy: 0.5982 - val_loss: 1.0113 - val_accuracy: 0.5950
+Epoch 10/20
+268/268 [==============================] - 91s 338ms/step - loss: 1.0079 - accuracy: 0.6057 - val_loss: 0.9882 - val_accuracy: 0.6286
+Epoch 11/20
+268/268 [==============================] - 92s 344ms/step - loss: 0.9923 - accuracy: 0.6122 - val_loss: 0.9746 - val_accuracy: 0.6216
+Epoch 12/20
+268/268 [==============================] - 91s 341ms/step - loss: 0.9769 - accuracy: 0.6170 - val_loss: 0.9543 - val_accuracy: 0.6402
+Epoch 13/20
+268/268 [==============================] - 94s 350ms/step - loss: 0.9621 - accuracy: 0.6239 - val_loss: 0.9441 - val_accuracy: 0.6360
+Epoch 14/20
+268/268 [==============================] - 93s 348ms/step - loss: 0.9477 - accuracy: 0.6333 - val_loss: 0.9277 - val_accuracy: 0.6514
+Epoch 15/20
+268/268 [==============================] - 92s 344ms/step - loss: 0.9344 - accuracy: 0.6334 - val_loss: 0.9187 - val_accuracy: 0.6519
+Epoch 16/20
+268/268 [==============================] - 88s 329ms/step - loss: 0.9265 - accuracy: 0.6326 - val_loss: 0.9024 - val_accuracy: 0.6645
+Epoch 17/20
+268/268 [==============================] - 94s 352ms/step - loss: 0.9157 - accuracy: 0.6418 - val_loss: 0.8915 - val_accuracy: 0.6687
+Epoch 18/20
+268/268 [==============================] - 91s 341ms/step - loss: 0.9043 - accuracy: 0.6467 - val_loss: 0.8843 - val_accuracy: 0.6645
+Epoch 19/20
+268/268 [==============================] - 93s 346ms/step - loss: 0.8964 - accuracy: 0.6517 - val_loss: 0.8726 - val_accuracy: 0.6734
+Epoch 20/20
+268/268 [==============================] - 93s 345ms/step - loss: 0.8810 - accuracy: 0.6549 - val_loss: 0.8649 - val_accuracy: 0.6682
+67/67 [==============================] - 18s 270ms/step - loss: 0.8649 - accuracy: 0.6682
+Validation Loss: 0.8649
+Validation Accuracy: 0.6682
+PS C:\Users\Medha Agarwal\Desktop\GANs> 
