@@ -2,6 +2,8 @@
 
 **brainAI** is an advanced web application developed to analyze, classify, and predict brain tumors. By leveraging cutting-edge technologies like data augmentation with Generative Adversarial Networks (GANs), ResNet for tumor type classification, and time series analysis for tumor growth predictions, BrainAI helps in early tumor detection and personalized treatment planning.
 
+Link to dataset for GANs and detection/classification - https://zenodo.org/records/12735702/files/brain-tumor-mri-dataset.zip?download=1
+
 ## Key Features
 
 ### 1. Tumor Type Classification
