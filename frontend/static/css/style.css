@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(to bottom, #333, #444);
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.brain-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+.brain-ai-logo {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
