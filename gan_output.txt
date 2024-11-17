@@ -1,0 +1,263 @@
+PS C:\Users\Medha Agarwal\Desktop\imd> cd "c:\Users\Medha Agarwal\Desktop\imd"
+PS C:\Users\Medha Agarwal\Desktop\imd> python -u "c:\Users\Medha Agarwal\Desktop\imd\gan.py"
+TensorFlow version: 2.13.0
+Num GPUs Available:  0
+Training data shape: (5712, 128, 128, 1)
+Training labels shape: (5712,)
+2024-09-24 22:07:22.423554: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/50
+Training Epoch 1/50:   0%|                                                                                                                                                | 0/179 [00:00<?, ?batch/s]2024-09-24 22:07:22.658237: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 748683264 exceeds 10% of free system memory.
+Training Epoch 1/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=4.01, Disc Loss=0.854]
+Epoch 1 completed. Gen Loss: 4.0102, Disc Loss: 0.8536
+
+Epoch 2/50
+Training Epoch 2/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.41batch/s, Gen Loss=1.68, Disc Loss=0.638] 
+Epoch 2 completed. Gen Loss: 1.6754, Disc Loss: 0.6378
+
+Epoch 3/50
+Training Epoch 3/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.32batch/s, Gen Loss=2.12, Disc Loss=0.678] 
+Epoch 3 completed. Gen Loss: 2.1249, Disc Loss: 0.6777
+
+Epoch 4/50
+Training Epoch 4/50: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.41batch/s, Gen Loss=1.3, Disc Loss=0.717] 
+Epoch 4 completed. Gen Loss: 1.3032, Disc Loss: 0.7169
+
+Epoch 5/50
+Training Epoch 5/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:13<00:00,  2.45batch/s, Gen Loss=1.48, Disc Loss=0.708] 
+Epoch 5 completed. Gen Loss: 1.4779, Disc Loss: 0.7076
+
+Epoch 6/50
+Training Epoch 6/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:12<00:00,  2.48batch/s, Gen Loss=2.02, Disc Loss=0.793] 
+Epoch 6 completed. Gen Loss: 2.0184, Disc Loss: 0.7931
+
+Epoch 7/50
+Training Epoch 7/50: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.77, Disc Loss=1.47] 
+Epoch 7 completed. Gen Loss: 1.7660, Disc Loss: 1.4651
+
+Epoch 8/50
+Training Epoch 8/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.38batch/s, Gen Loss=1.88, Disc Loss=0.469] 
+Epoch 8 completed. Gen Loss: 1.8765, Disc Loss: 0.4692
+
+Epoch 9/50
+Training Epoch 9/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.39batch/s, Gen Loss=2.17, Disc Loss=0.442] 
+Epoch 9 completed. Gen Loss: 2.1680, Disc Loss: 0.4422
+
+Epoch 10/50
+Training Epoch 10/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.34batch/s, Gen Loss=1.8, Disc Loss=0.497] 
+Epoch 10 completed. Gen Loss: 1.7950, Disc Loss: 0.4971
+
+Epoch 11/50
+Training Epoch 11/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.36batch/s, Gen Loss=1.54, Disc Loss=1.27] 
+Epoch 11 completed. Gen Loss: 1.5421, Disc Loss: 1.2659
+
+Epoch 12/50
+Training Epoch 12/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=1.56, Disc Loss=0.574] 
+Epoch 12 completed. Gen Loss: 1.5625, Disc Loss: 0.5741
+
+Epoch 13/50
+Training Epoch 13/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.31batch/s, Gen Loss=2.73, Disc Loss=0.822] 
+Epoch 13 completed. Gen Loss: 2.7341, Disc Loss: 0.8218
+
+Epoch 14/50
+Training Epoch 14/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:18<00:00,  2.29batch/s, Gen Loss=1.96, Disc Loss=0.697] 
+Epoch 14 completed. Gen Loss: 1.9556, Disc Loss: 0.6972
+
+Epoch 15/50
+Training Epoch 15/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=1.61, Disc Loss=0.456] 
+Epoch 15 completed. Gen Loss: 1.6131, Disc Loss: 0.4562
+
+Epoch 16/50
+Training Epoch 16/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=1.32, Disc Loss=0.783] 
+Epoch 16 completed. Gen Loss: 1.3222, Disc Loss: 0.7827
+
+Epoch 17/50
+Training Epoch 17/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.34batch/s, Gen Loss=2.53, Disc Loss=0.391] 
+Epoch 17 completed. Gen Loss: 2.5264, Disc Loss: 0.3906
+
+Epoch 18/50
+Training Epoch 18/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.67, Disc Loss=0.519] 
+Epoch 18 completed. Gen Loss: 1.6670, Disc Loss: 0.5185
+
+Epoch 19/50
+Training Epoch 19/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.34batch/s, Gen Loss=1.05, Disc Loss=1.09] 
+Epoch 19 completed. Gen Loss: 1.0469, Disc Loss: 1.0896
+
+Epoch 20/50
+Training Epoch 20/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=2.82, Disc Loss=1.16] 
+Epoch 20 completed. Gen Loss: 2.8172, Disc Loss: 1.1601
+
+Epoch 21/50
+Training Epoch 21/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.32batch/s, Gen Loss=3.94, Disc Loss=0.178] 
+Epoch 21 completed. Gen Loss: 3.9381, Disc Loss: 0.1778
+
+Epoch 22/50
+Training Epoch 22/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=2.08, Disc Loss=0.841] 
+Epoch 22 completed. Gen Loss: 2.0785, Disc Loss: 0.8411
+
+Epoch 23/50
+Training Epoch 23/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=2.41, Disc Loss=0.452] 
+Epoch 23 completed. Gen Loss: 2.4053, Disc Loss: 0.4523
+
+Epoch 24/50
+Training Epoch 24/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.84, Disc Loss=0.48] 
+Epoch 24 completed. Gen Loss: 1.8441, Disc Loss: 0.4804
+
+Epoch 25/50
+Training Epoch 25/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=1.42, Disc Loss=0.557] 
+Epoch 25 completed. Gen Loss: 1.4237, Disc Loss: 0.5568
+
+Epoch 26/50
+Training Epoch 26/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.32batch/s, Gen Loss=1.28, Disc Loss=0.688] 
+Epoch 26 completed. Gen Loss: 1.2796, Disc Loss: 0.6879
+
+Epoch 27/50
+Training Epoch 27/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=1.37, Disc Loss=0.693] 
+Epoch 27 completed. Gen Loss: 1.3703, Disc Loss: 0.6933
+
+Epoch 28/50
+Training Epoch 28/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.34batch/s, Gen Loss=1.42, Disc Loss=0.877] 
+Epoch 28 completed. Gen Loss: 1.4153, Disc Loss: 0.8773
+
+Epoch 29/50
+Training Epoch 29/50: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.35batch/s, Gen Loss=1.53, Disc Loss=1.1] 
+Epoch 29 completed. Gen Loss: 1.5256, Disc Loss: 1.0994
+
+Epoch 30/50
+Training Epoch 30/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.32batch/s, Gen Loss=1.59, Disc Loss=0.792] 
+Epoch 30 completed. Gen Loss: 1.5947, Disc Loss: 0.7919
+
+Epoch 31/50
+Training Epoch 31/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.32batch/s, Gen Loss=1.28, Disc Loss=0.856] 
+Epoch 31 completed. Gen Loss: 1.2798, Disc Loss: 0.8563
+
+Epoch 32/50
+Training Epoch 32/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.31batch/s, Gen Loss=1.31, Disc Loss=0.78] 
+Epoch 32 completed. Gen Loss: 1.3062, Disc Loss: 0.7802
+
+Epoch 33/50
+Training Epoch 33/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.36batch/s, Gen Loss=2.03, Disc Loss=0.905] 
+Epoch 33 completed. Gen Loss: 2.0256, Disc Loss: 0.9054
+
+Epoch 34/50
+Training Epoch 34/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.8, Disc Loss=0.695] 
+Epoch 34 completed. Gen Loss: 1.7995, Disc Loss: 0.6950
+
+Epoch 35/50
+Training Epoch 35/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.36batch/s, Gen Loss=1.82, Disc Loss=0.812] 
+Epoch 35 completed. Gen Loss: 1.8163, Disc Loss: 0.8115
+
+Epoch 36/50
+Training Epoch 36/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.05, Disc Loss=0.861] 
+Epoch 36 completed. Gen Loss: 1.0457, Disc Loss: 0.8611
+
+Epoch 37/50
+Training Epoch 37/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.37batch/s, Gen Loss=1.41, Disc Loss=1.05] 
+Epoch 37 completed. Gen Loss: 1.4102, Disc Loss: 1.0519
+
+Epoch 38/50
+Training Epoch 38/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:15<00:00,  2.36batch/s, Gen Loss=1.93, Disc Loss=0.663] 
+Epoch 38 completed. Gen Loss: 1.9283, Disc Loss: 0.6627
+
+Epoch 39/50
+Training Epoch 39/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:18<00:00,  2.29batch/s, Gen Loss=2.07, Disc Loss=0.527] 
+Epoch 39 completed. Gen Loss: 2.0686, Disc Loss: 0.5271
+
+Epoch 40/50
+Training Epoch 40/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:18<00:00,  2.29batch/s, Gen Loss=1.43, Disc Loss=0.754] 
+Epoch 40 completed. Gen Loss: 1.4341, Disc Loss: 0.7537
+
+Epoch 41/50
+Training Epoch 41/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:13<00:00,  2.45batch/s, Gen Loss=1.56, Disc Loss=0.726] 
+Epoch 41 completed. Gen Loss: 1.5557, Disc Loss: 0.7258
+
+Epoch 42/50
+Training Epoch 42/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.41batch/s, Gen Loss=1.57, Disc Loss=0.616] 
+Epoch 42 completed. Gen Loss: 1.5687, Disc Loss: 0.6160
+
+Epoch 43/50
+Training Epoch 43/50: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:13<00:00,  2.44batch/s, Gen Loss=1.58, Disc Loss=0.9] 
+Epoch 43 completed. Gen Loss: 1.5778, Disc Loss: 0.8999
+
+Epoch 44/50
+Training Epoch 44/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:17<00:00,  2.30batch/s, Gen Loss=1.2, Disc Loss=0.996] 
+Epoch 44 completed. Gen Loss: 1.1956, Disc Loss: 0.9957
+
+Epoch 45/50
+Training Epoch 45/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:18<00:00,  2.28batch/s, Gen Loss=1.26, Disc Loss=0.759] 
+Epoch 45 completed. Gen Loss: 1.2561, Disc Loss: 0.7592
+
+Epoch 46/50
+Training Epoch 46/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=1.07, Disc Loss=1.14] 
+Epoch 46 completed. Gen Loss: 1.0661, Disc Loss: 1.1416
+
+Epoch 47/50
+Training Epoch 47/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:18<00:00,  2.28batch/s, Gen Loss=0.746, Disc Loss=1.06] 
+Epoch 47 completed. Gen Loss: 0.7460, Disc Loss: 1.0569
+
+Epoch 48/50
+Training Epoch 48/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=1.2, Disc Loss=0.745] 
+Epoch 48 completed. Gen Loss: 1.2024, Disc Loss: 0.7447
+
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+
+Epoch 50/50
+Training Epoch 50/50: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=0.913, Disc Loss=0.926] 
+Epoch 50 completed. Gen Loss: 0.9133, Disc Loss: 0.9261
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+
+Epoch 50/50
+Training Epoch 50/50: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=0.913, Disc Loss=0.926] 
+Epoch 50 completed. Gen Loss: 0.9133, Disc Loss: 0.9261
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+
+Epoch 50/50
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49/50
+Epoch 49/50
+Epoch 49/50
+Training Epoch 49/50: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:14<00:00,  2.40batch/s, Gen Loss=0.601, Disc Loss=1.11] 
+Epoch 49 completed. Gen Loss: 0.6006, Disc Loss: 1.1109
+
+Epoch 50/50
+Training Epoch 50/50: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 179/179 [01:16<00:00,  2.33batch/s, Gen Loss=0.913, Disc Loss=0.926] 
+Epoch 50 completed. Gen Loss: 0.9133, Disc Loss: 0.9261
+
+2024-09-24 23:10:45.042721: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 374341632 exceeds 10% of free system memory.
+2024-09-24 23:10:45.169781: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 374341632 exceeds 10% of free system memory.
+2024-09-24 23:10:45.232967: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 374341632 exceeds 10% of free system memory.
+2024-09-24 23:10:45.354004: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 374341632 exceeds 10% of free system memory.
+Generated 5712 new images
+Original dataset size: 5712
+Augmented dataset size: 11424
+Augmented images saved in folder: augmented_mri_images
+PS C:\Users\Medha Agarwal\Desktop\imd>
