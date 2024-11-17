@@ -8,34 +8,33 @@ def get_layer_and_model(model):
     """
     Get the last convolutional layer and create appropriate model for Grad-CAM
     """
-    # Get the ResNet50 base model
+    # Access the ResNet-50 model within the main model
     resnet_model = model.get_layer('resnet50')
     
-    # Find the last convolutional layer
-    last_conv_layer = None
-    for layer in resnet_model.layers:
+    # Find the last convolutional layer in ResNet-50
+    last_conv_layer_name = None
+    for layer in reversed(resnet_model.layers):
         if isinstance(layer, tf.keras.layers.Conv2D):
-            last_conv_layer = layer
+            last_conv_layer_name = layer.name
+            break
+
+    if last_conv_layer_name is None:
+        raise ValueError("No convolutional layer found in ResNet50 model")
     
-    if last_conv_layer is None:
-        raise ValueError("No convolutional layer found in the model")
-    
-    # Create a model that goes from the input to both the final layer and the last conv layer
+    # Define the grad_model with inputs from the main model and outputs from ResNet and final output
     grad_model = Model(
-        inputs=model.inputs,
-        outputs=[
-            last_conv_layer.output,
-            model.output
-        ]
+        inputs=[model.input],  # Main model’s input
+        outputs=[resnet_model.get_layer(last_conv_layer_name).output, model.output]
     )
-    
-    return grad_model, last_conv_layer
+
+    return grad_model, last_conv_layer_name
+
 
 def make_gradcam_heatmap(img_array, model, pred_index=None):
     """
     Create a Grad-CAM heatmap
     """
-    grad_model, last_conv_layer = get_layer_and_model(model)
+    grad_model, last_conv_layer_name = get_layer_and_model(model)
 
     # Compute the gradient of the top predicted class
     with tf.GradientTape() as tape:
@@ -124,11 +123,6 @@ def apply_gradcam(image_path, model, target_size=(128, 128)):
 if __name__ == "__main__":
     # Load model
     model = tf.keras.models.load_model('best_mri_model.h5')
-    
-    # Could you print the model summary to help debug?
-    print("Model layers:")
-    for layer in model.layers:
-        print(f"Layer name: {layer.name}, Type: {type(layer)}")
     
     # Apply Grad-CAM
     image_path = 'C:/Users/Medha Agarwal/Desktop/GANs/augmented_mri_images/augmented_mri_0.png'
