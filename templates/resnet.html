@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>brainAI</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fullpage.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    
+
+    </head>
+    
+    <body>
+    
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <a href="{{ url_for('home') }}" id="logo" title="brainAI">
+                        brainAI
+                    </a>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">About Model</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">Features</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">Training</a></li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <video autoplay muted loop id="myVideo">
+          <source src="static/images/video_bg.mp4" type="video/mp4">
+        </video>
+
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <h1 class="welcome-title animate" data-animate="fadeInUp">ResNet</h1>
+                        <p class="animate" data-animate="fadeInUp">ResNet-50 is a convolutional neural network (CNN) architecture that leverages residual connections to solve the vanishing gradient problem and allow for deeper networks. </p>
+                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-12"> <!-- Use full width for text content -->
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>About Model</span>
+                                                <h2>ResNet-50</h2>
+                                                <p>
+                                                    The ResNet-50 architecture consists of:
+                                                    <ul>
+                                                    <li><strong>Convolutional layers:</strong> These layers extract low- and high-level features from the input images.</li>
+                                                    <ol>
+                                                        <li>Input Layer:
+                                                            Shape: (128, 128, 3) (images resized to 128x128 pixels with 3 channels, RGB).
+                                                            Normalization: Input images are typically normalized to have values between 0 and 1 by dividing by 255.</li>
+                                                        <li>Initial Convolution (Conv1):
+                                                            Conv Layer: A 7x7 convolutional layer with 64 filters, followed by Batch Normalization (BN) and ReLU activation.
+                                                            Max Pooling: A 3x3 max pooling layer with stride 2 is applied after the convolution to reduce the spatial dimensions.</li>
+                                                    </ol>
+                                                    <br><br>
+                                                    <li><strong>Residual blocks:</strong> These layers help solve the vanishing gradient problem by using identity shortcuts.</li>
+                                                    <ol>
+                                                        <li>Stage 1:
+
+                                                            Contains 3 residual blocks.
+                                                            Each block has two convolutions (3x3 kernels) and a skip connection (identity mapping) that helps mitigate the vanishing gradient problem.</li>
+                                                        <li>Stage 2:
+
+                                                            Contains 4 residual blocks.
+                                                            Each block has three convolutions (3x3 kernels), with batch normalization and ReLU activation functions applied at each step.
+                                                            </li>
+                                                        <li>Stage 3:
+
+                                                            Contains 6 residual blocks.
+                                                            Each block has three convolutions.</li>
+                                                        <li>Stage 4:
+
+                                                            Contains 3 residual blocks.
+                                                            Each block has three convolutions.</li>
+                                                    </ol>
+                                                    <br><br>
+                                                    <li><strong>Bottleneck Layers: </strong>These ensure that the computations remain efficient even with the increase in depth. Each residual block in the deeper layers is made more efficient by using a 1x1 convolution before the 3x3 convolution to reduce the depth of the intermediate feature maps.</li>
+                                                    <br><br>
+                                                    <li><strong>Global average pooling:</strong> This operation reduces the spatial dimensions, summarizing the features extracted.</li>
+                                                    <br><br>
+                                                    <li><strong>Dense layer with softmax activation:</strong> This produces the final classification output.</li>
+                                                    <ol>
+                                                        <li>Output Shape: (4,), representing the 4 classes (glioma, meningioma, notumor, pituitary).</li>
+                                                        <li>Activation: Softmax, which outputs probabilities for each of the 4 classes.</li>
+                                                    </ol>
+                                                    <br><br>
+                                                <ul></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Features</span>
+                                <h2>Dataset</h2>
+                            </div>
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                                            <h3>5712 images belonging to 4 classes</h3>
+                                            <p>Class indices: {'glioma': 0, 'meningioma': 1, 'notumor': 2, 'pituitary': 3} </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                            <h3>Labels</h3>
+                                            <p>Converted augmented images to RGB: (5000, 128, 128, 3)
+                                                Augmented labels shape: (5000, 4)
+                                                Combined  labels shape: (10712, 4) </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                            <h3>Dataset Shape</h3>
+                                            <p>Original dataset shape: (5712, 128, 128, 3), Labels shape: (5712, 4)
+                                                Augmented dataset shape: (5000, 128, 128, 1)
+                                                Original dataset shape: (5712, 128, 128, 3), Labels shape: (5712, 4)
+                                                Augmented dataset shape: (5000, 128, 128, 1) </p>
+                                        </div>
+                                    </div>
+                                
+                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide04">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Epochs</span>
+                                <h2>Accuracy</h2>
+                            </div>
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">   
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>33.42%</span>
+                                                <div class="filled-bar" style="width: 33.42%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Validation Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>52.45%</span>
+                                                <div class="filled-bar" style="width: 52.45%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 20 - Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>65.49%</span>
+                                                <div class="filled-bar" style="width: 65.49%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>Epoch 20 - Validation Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>66.82%</span>
+                                                <div class="filled-bar" style="width: 68.82%;"></div>
+                                            </div>          
+                                        </div>                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/aashna-dogra-aaa93624a/" title="Aashna Dogra"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                          <a href="https://www.linkedin.com/in/medha-agarwal-01b33725a/" title="Medha Agarwal"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/in/jagriti-gautam-7249b7249/" title="Jagriti Gautam"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+
+
+  </body>
+</html>

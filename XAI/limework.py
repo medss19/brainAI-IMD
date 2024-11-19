@@ -8,11 +8,14 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 import os
 from lime import lime_image
-from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.applications.resnet50 import preprocess_input
+from tensorflow.keras.preprocessing.image import img_to_array, load_img, array_to_img
+# from your_project import preprocess_input, get_gradcam_heatmap  # Ensure these are correctly imported
 
-# Load base model (ResNet50) and add custom layers
-base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(128, 128, 3))
+
+# Load the ResNet50 model (pre-trained weights)
+base_model = ResNet50(weights='imagenet', include_top=False,
+                      input_shape=(128, 128, 3))
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
 x = Dense(256, activation='relu')(x)
@@ -21,9 +24,10 @@ predictions = Dense(4, activation='softmax')(x)
 
 model = Model(inputs=base_model.input, outputs=predictions)
 
-# Grad-CAM function
+# Grad-CAM function to generate the heatmap
 def get_gradcam_heatmap(model, image, last_conv_layer_name, pred_index=None):
-    grad_model = Model([model.inputs], [model.get_layer(last_conv_layer_name).output, model.output])
+    grad_model = Model([model.inputs], [model.get_layer(
+        last_conv_layer_name).output, model.output])
 
     with tf.GradientTape() as tape:
         conv_outputs, predictions = grad_model(image)
@@ -40,18 +44,19 @@ def get_gradcam_heatmap(model, image, last_conv_layer_name, pred_index=None):
     heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
     return heatmap.numpy(), predictions.numpy()
 
-# Function to prepare the model for LIME
+
+# LIME prediction function
 def predict_fn(images):
     images = np.array(images)
     images = preprocess_input(images)
     return model.predict(images)
 
-# Function to visualize Grad-CAM and LIME with an explanation
 
+# Function to visualize Grad-CAM and LIME with an explanation
 def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.4):
     # Load and preprocess the image
-    img = tf.keras.preprocessing.image.load_img(image_path, target_size=target_size)
-    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img = load_img(image_path, target_size=target_size)
+    img_array = img_to_array(img)
     img_array_expanded = np.expand_dims(img_array, axis=0)
     img_array_preprocessed = preprocess_input(img_array_expanded)
 
@@ -60,15 +65,15 @@ def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.
     heatmap, predictions = get_gradcam_heatmap(model, img_array_preprocessed, last_conv_layer_name)
 
     # Prediction probabilities
-    class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']  # Replace with actual class names
+    class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
     confidences = {class_names[i]: predictions[0][i] for i in range(len(class_names))}
 
     # LIME Explanation
     explainer = lime_image.LimeImageExplainer()
     explanation = explainer.explain_instance(img_array.astype('double'), predict_fn, top_labels=4, hide_color=0, num_samples=1000)
-    
+
     # Create visualizations
-    fig, axes = plt.subplots(2, 3, figsize=(12, 8), dpi=80)  # Smaller figure size and dpi for better image fit
+    fig, axes = plt.subplots(2, 3, figsize=(12, 8), dpi=80)
 
     # Original image
     axes[0, 0].imshow(img)
@@ -81,22 +86,18 @@ def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.
     axes[0, 1].axis('off')
 
     # Superimposed Image
-    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = img_to_array(img)
     heatmap_img = np.uint8(255 * heatmap)
-    
-    # Use jet colormap (Updated for compatibility with newer versions of Matplotlib)
     jet = plt.cm.get_cmap('jet')
     jet_colors = jet(np.arange(256))[:, :3]
     jet_heatmap = jet_colors[heatmap_img]
-    
-    # Resize and convert
-    jet_heatmap = tf.keras.preprocessing.image.array_to_img(jet_heatmap)
+
+    jet_heatmap = array_to_img(jet_heatmap)
     jet_heatmap = jet_heatmap.resize(target_size)
-    jet_heatmap = tf.keras.preprocessing.image.img_to_array(jet_heatmap)
-    
-    # Superimpose
+    jet_heatmap = img_to_array(jet_heatmap)
+
     superimposed = jet_heatmap * opacity + img_array
-    superimposed = tf.keras.preprocessing.image.array_to_img(superimposed)
+    superimposed = array_to_img(superimposed)
 
     axes[0, 2].imshow(superimposed)
     axes[0, 2].set_title('Superimposed Image')
@@ -106,18 +107,13 @@ def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.
     axes[1, 0].barh(list(confidences.keys()), list(confidences.values()), color='skyblue')
     axes[1, 0].set_title('Prediction Confidence')
     axes[1, 0].set_xlabel('Probability')
-    axes[1, 0].set_xlim(0, 1)  # Ensure full visibility of the x-axis
+    axes[1, 0].set_xlim(0, 1)
 
     # LIME Explanation Overlay
     lime_overlay_result = explanation.get_image_and_mask(explanation.top_labels[0], positive_only=True, hide_rest=True)
-
-    # Check if the lime_overlay_result is not None before proceeding
+    
     if lime_overlay_result:
-        # Convert the LIME image to the appropriate dtype for display
-        lime_explanation_image = np.uint8(lime_overlay_result[0] * 255)  # Ensure the image is in [0, 255] range for saving and displaying
-
-        # Check the dtype of lime_explanation_image
-        print(f"LIME Image dtype: {lime_explanation_image.dtype}")  # Should print uint8
+        lime_explanation_image = np.uint8(lime_overlay_result[0] * 255)
 
         # Plot the LIME image
         axes[1, 1].imshow(lime_explanation_image)
@@ -126,8 +122,8 @@ def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.
     else:
         print("LIME explanation not available.")
 
-    # Add explanation text alongside LIME image
-    axes[1, 2].axis('off')  # Turn off the axis for the text box
+    # Explanation text
+    axes[1, 2].axis('off')
     explanation_text = """
     LIME Explanation:
     - The highlighted regions correspond to the important features
@@ -137,33 +133,47 @@ def apply_gradcam_and_lime(image_path, model, target_size=(128, 128), opacity=0.
     """
     axes[1, 2].text(0, 0.5, explanation_text, ha='left', va='center', fontsize=10, wrap=True, color='black')
 
-    # Adjust layout to ensure everything fits well with more padding
-    plt.subplots_adjust(wspace=0.5, hspace=0.5)  # Increase space between subplots
-    plt.tight_layout(pad=4.0)  # Add more padding to ensure no overlap
-
-    # Show the plot
-    plt.show()
+    # Adjust layout and show the plot
+    plt.subplots_adjust(wspace=0.5, hspace=0.5)
+    plt.tight_layout(pad=4.0)
 
     # Save results including LIME explanation
-    save_results(img, heatmap, superimposed, lime_explanation_image)
-
-def save_results(original_img, heatmap, superimposed_img, lime_explanation_image, output_dir = 'output/'):
-    # Save images
-    original_img.save(f"{output_dir}original_image.png")
-    plt.imsave(f"{output_dir}heatmap.png", heatmap, cmap='jet')
-    superimposed_img.save(f"{output_dir}superimposed_image.png")
+    output_dir = 'static/output/'
+    os.makedirs(output_dir, exist_ok=True)
     
-    # Save LIME image
+    original_image_path = os.path.join(output_dir, 'original_image.png')
+    heatmap_image_path = os.path.join(output_dir, 'heatmap.png')
+    superimposed_image_path = os.path.join(output_dir, 'superimposed_image.png')
+    lime_image_path = os.path.join(output_dir, 'lime_explanation_image.png')
+
+     # Save the images using PIL for better quality
+    img.save(original_image_path, format='PNG', dpi=(300, 300))  # Save with high DPI
+    Image.fromarray(np.uint8(255 * heatmap)).save(heatmap_image_path, format='PNG', dpi=(300, 300))
+    superimposed.save(superimposed_image_path, format='PNG', dpi=(300, 300))
+    Image.fromarray(lime_explanation_image).save(lime_image_path, format='PNG', dpi=(300, 300))
+
+
+    plt.close(fig)
+
+    return {
+        'original': original_image_path,
+        'heatmap': heatmap_image_path,
+        'superimposed': superimposed_image_path,
+        'lime': lime_image_path
+    }
+
+
+def save_results(original_img, heatmap, superimposed_img, lime_explanation_image, output_dir='static/output/'):
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Save images
+    original_img.save(os.path.join(output_dir, "original_image.png"))
+    plt.imsave(os.path.join(output_dir, "heatmap.png"), heatmap, cmap='jet')
+    superimposed_img.save(os.path.join(output_dir, "superimposed_image.png"))
+
     if lime_explanation_image is not None:
-        lime_image_pil = Image.fromarray(lime_explanation_image)  # Convert LIME image to PIL format
-        lime_image_pil.save(f"{output_dir}lime_explanation_image.png")
-        print(f"LIME image saved as {output_dir}lime_explanation_image.png")
+        lime_image_pil = Image.fromarray(lime_explanation_image)
+        lime_image_pil.save(os.path.join(output_dir, "lime_explanation_image.png"))
 
-    print(f"Results saved in {output_dir}")
-
-
-# Example usage
-if __name__ == "__main__":
-    # Apply Grad-CAM and LIME
-    image_path = 'C:/Users/Medha Agarwal/Desktop/GANs/augmented_mri_images/augmented_mri_0.png'  # Update with the actual image path
-    apply_gradcam_and_lime(image_path=image_path, model=model, opacity=0.5)
+    # Return the path of the saved result images to be used in Flask
+    return 'output/'

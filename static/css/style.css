@@ -1,0 +1,178 @@
+body {
+    background: linear-gradient(to bottom, #333, #444);
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.brain-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+.brain-ai-logo {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Make the entire card clickable */
+.portfolio-link {
+    display: block;
+    text-decoration: none; /* Remove underline for links */
+}
+
+/* Hover effect for the portfolio card */
+.portfolio-item:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Inner text visibility on hover */
+.portfolio-item:hover .thumb-inner {
+    opacity: 1;
+}
+
+/* Hide text by default */
+.thumb-inner {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Styling for the thumb and inner content */
+.thumb img {
+    width: 100%;
+    border-radius: 8px;
+}
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+    gap: 10px; /* Space between images */
+    padding: 20px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    margin: 5px;
+    color: #fff;
+  }
+
+  #fileInput {
+    display: none;
+  }
+
+  /* Custom styled file input button */
+  .file-input-wrapper {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .file-input-wrapper:hover {
+    background-color: #0056b3;
+  }
+
+  /* Optional: Show selected file name */
+  #fileName {
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  /* Predict button */
+  .btn-purple {
+    background-color: purple;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .btn-purple:hover {
+    background-color: darkviolet;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  label {
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>brainAI</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fullpage.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    
+
+    </head>
+    
+    <body>
+    
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <a href="{{ url_for('home') }}" id="logo" title="brainAI">
+                        brainAI
+                    </a>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">About Model</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">Features</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">Training</a></li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <video autoplay muted loop id="myVideo">
+          <source src="static/images/video_bg.mp4" type="video/mp4">
+        </video>
+
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <h1 class="welcome-title animate" data-animate="fadeInUp">VGG</h1>
+                        <p class="animate" data-animate="fadeInUp">The VGG-16 model is a popular convolutional neural network introduced by the Visual Geometry Group (VGG) from the University of Oxford. Known for its simplicity and efficiency, VGG-16 is particularly effective for image classification tasks. </p>
+                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-12"> <!-- Use full width for text content -->
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>About Model</span>
+                                                <h2>VGG-16</h2>
+                                                <p>
+                                                    The VGG-16 architecture consists of:
+                                                    <ul>
+                                                    <li><strong>Convolutional layers: </strong> The model consists of 13 convolutional layers grouped into five blocks. Each block uses small 3x3 filters, emphasizing deeper networks over wider filters. This choice enhances the ability to extract complex features while keeping computations manageable.</li>
+                                                    
+                                                    <br><br>
+                                                    <li><strong>Pooling layers: </strong>After each block, max-pooling layers (2x2) reduce the spatial dimensions, preserving key features while reducing computational cost.</li>
+                                                                                                  <br><br>
+                                                    <li><strong>Fully Connected Layers: </strong>At the end of the convolutional pipeline, there are two dense layers (each with 4096 units) followed by a softmax layer for classification.</li>
+                                                    <br><br>
+                                                    <li><strong>Pretrained Weights: </strong> VGG-16 often uses weights pretrained on ImageNet, providing a strong baseline for transfer learning tasks.</li>
+                                                    <br><br>
+                                                     <ul></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Features</span>
+                                <h2>Dataset</h2>
+                            </div>
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                                            <h3>Training and Validataion sets</h3>
+                                            <p>Training Set: 1049 images belonging to 4 classes.
+                                                Validation Set: 262 images belonging to 4 classes.
+                                                </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                            <h3>Layers</h3>
+                                            <p>A Flatten layer to reshape the output of the VGG-16 feature extractor.<br>
+                                                A Dense layer with 512 units for feature learning.
+                                                A Dropout layer to reduce overfitting.
+                                                A Final Dense layer with 4 units (for the number of classes) and softmax activation for classification. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                            <h3>Parameters</h3>
+                                            <p>Total Parameters: 27,562,308 (~105 MB)
+                                                Trainable Parameters: 12,847,620 (~49 MB)
+                                                Non-trainable Parameters: 14,714,688 (~56 MB, from the pretrained VGG-16 backbone)</div>
+                                    </div>
+                                
+                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide04">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Epochs</span>
+                                <h2>Accuracy</h2>
+                            </div>
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">   
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>59.10%</span>
+                                                <div class="filled-bar" style="width: 59.10%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Validation Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>66.41%</span>
+                                                <div class="filled-bar" style="width: 66.41%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 10 - Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>92.56%</span>
+                                                <div class="filled-bar" style="width: 92.56%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>Epoch 10 - Validation Accuracy</h6>
+                                            <div class="skill-bar">
+                                                <span>79.01%</span>
+                                                <div class="filled-bar" style="width: 79.01%;"></div>
+                                            </div>          
+                                        </div>                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/aashna-dogra-aaa93624a/" title="Aashna Dogra"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                          <a href="https://www.linkedin.com/in/medha-agarwal-01b33725a/" title="Medha Agarwal"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/in/jagriti-gautam-7249b7249/" title="Jagriti Gautam"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+
+
+  </body>
+</html>

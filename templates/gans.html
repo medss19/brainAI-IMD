@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>brainAI</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fullpage.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    
+
+    </head>
+    
+    <body>
+    
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <a href="{{ url_for('home') }}" id="logo" title="brainAI">
+                        brainAI
+                    </a>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">About Model</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">Features</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">Training</a></li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <video autoplay muted loop id="myVideo">
+          <source src="static/images/video_bg.mp4" type="video/mp4">
+        </video>
+
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <h1 class="welcome-title animate" data-animate="fadeInUp">GANs</h1>
+                        <p class="animate" data-animate="fadeInUp">GANs (Generative Adversarial Networks) are a class of machine learning models that consist of two neural networks — the Generator and the Discriminator — that are trained simultaneously in a competitive framework. They are widely used for tasks such as image generation, style transfer, and data augmentation. </p>
+                        <div class="scroll-down next-section animate data-animate="fadeInUp><img src="images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-12"> <!-- Use full width for text content -->
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>About Model</span>
+                                                <h2>GANs</h2>
+                                                <p>
+                                                    The GAN architecture consists of:
+                                                    <ul>
+                                                    <li><strong>Key Components:</strong> </li>
+                                                    <ol>
+                                                        <li>Generator (G):
+                                                            The Generator learns to generate synthetic data that resembles the real data distribution. It takes in random noise (latent space) as input and tries to generate data (like images) that are indistinguishable from real data.
+                                                            Its objective is to fool the Discriminator into thinking its output is real.</li>
+                                                        <li>Discriminator (D):
+                                                            The Discriminator is a binary classifier that distinguishes between real and fake data. It takes in real data (from the training set) and synthetic data (generated by the Generator) and predicts whether each piece of data is real or fake.
+                                                            Its objective is to correctly classify real data as real and fake data as fake.</li>
+                                                    </ol>
+                                                    <br><br>
+                                                    <li><strong>Training:</strong> </li>
+                                                        <ul>
+                                                        <li>During training, the Generator generates fake data from random noise.</li>
+                                                        <li>The Discriminator evaluates the fake data alongside real data and learns to distinguish between them.
+                                                            </li>
+                                                        <li>The two networks are in a zero-sum game:
+
+                                                            The Generator is trying to maximize the probability of the Discriminator making an error (i.e., classifying fake data as real).
+                                                            The Discriminator is trying to minimize this error. </li>
+                                                    </ul>
+                                                    <br><br>
+                                                    <li><strong>Mathematical Formulation: </strong>The GAN training process can be viewed as a minimax game. The objective is for the Generator to minimize the following loss function, while the Discriminator tries to maximize it:</li>
+                                                    <br><br>
+                                                    <li><strong>Convergence:</strong> The training process of GANs is challenging due to the unstable nature of the competition between the Generator and the Discriminator. In an ideal scenario, both the Generator and Discriminator reach a state where the Generator produces data indistinguishable from real data, and the Discriminator cannot differentiate between them.</li>
+                                                    <br><br>
+                                                    
+                                                <ul></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Features</span>
+                                <h2>Dataset</h2>
+                            </div>
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                                            <h3>Training</h3>
+                                            <p>Data Shape: (5712, 128, 128, 1) 
+                                                Label Shape: (5712,)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                            <h3>Epochs</h3>
+                                            <p>50 Epochs
+                                                Batch size: 179 steps per epoch
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                            <h3>Speed</h3>
+                                            <p>Training Speed: ~2.35 batches per second </p>
+                                        </div>
+                                    </div>
+                                
+                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide04">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Epochs</span>
+                                <h2>Accuracy</h2>
+                            </div>
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">   
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Gen Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>4.0102</span>
+                                                <div class="filled-bar" style="width: 90%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 1 - Disc Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>0.8536</span>
+                                                <div class="filled-bar" style="width: 40%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 5 - Gen Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>1.4779</span>
+                                                <div class="filled-bar" style="width: 58%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>Epoch 5 - Disc Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>0.7076</span>
+                                                <div class="filled-bar" style="width: 33%;"></div>
+                                            </div>          
+                                        </div> 
+                                        <div class="skill-item">
+                                            <h6>Epoch 21 - Gen Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>3.9381</span>
+                                                <div class="filled-bar" style="width: 80%;"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Epoch 21 - Disc Loss</h6>
+                                            <div class="skill-bar">
+                                                <span>0.1778</span>
+                                                <div class="filled-bar" style="width: 18%;"></div>
+                                            </div>          
+                                        </div>                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/aashna-dogra-aaa93624a/" title="Aashna Dogra"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                          <a href="https://www.linkedin.com/in/medha-agarwal-01b33725a/" title="Medha Agarwal"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/in/jagriti-gautam-7249b7249/" title="Jagriti Gautam"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+
+
+  </body>
+</html>

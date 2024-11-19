@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>XAI - Image Upload</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+
+    <!-- Additional CSS Files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/font-awesome.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/fullpage.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/owl.carousel.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/animate.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/templatemo-style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+  </head>
+
+  <body>
+    <div id="video">
+      <div class="preloader">
+        <div class="preloader-bounce">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <header id="header">
+        <div class="container-fluid">
+          <div class="navbar">
+            <a href="{{ url_for('home') }}" id="logo" title="XAI">brainAI</a>
+            <div class="navigation-row">
+              <nav id="navigation">
+                <button type="button" class="navbar-toggle">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <div class="nav-box navbar-collapse">
+                  <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                    <li data-menuanchor="slide01" class="active">
+                      <a href="#slide01">Home</a>
+                    </li>
+                    <li data-menuanchor="slide02">
+                      <a href="#slide02">Upload Images</a>
+                    </li>
+                    <li data-menuanchor="slide03">
+                      <a href="#slide03">Results</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Video Background -->
+      <video autoplay muted loop id="myVideo">
+        <source
+          src="{{ url_for('static', filename='images/video_bg.mp4') }}"
+          type="video/mp4"
+        />
+      </video>
+
+      <div id="fullpage" class="fullpage-default">
+        <!-- Home Section -->
+        <div class="section animated-row" data-section="slide01">
+          <div class="section-inner">
+            <div class="welcome-box">
+              <h1 class="welcome-title animate" data-animate="fadeInUp">XAI</h1>
+              <p class="animate" data-animate="fadeInUp">
+                With the help of eXplainable AI we will show you how our AI model uses your MRI scan to make predictions.
+              </p>
+              <div
+                class="scroll-down next-section animate"
+                data-animate="fadeInUp"
+              >
+                <img src="images/mouse-scroll.png" alt="" />
+                <span>Scroll Down</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="section animated-row" data-section="slide02">
+          <div class="section-inner">
+            <div class="welcome-box">
+              <h1 class="animate" data-animate="fadeInUp">Upload Images</h1>
+              <p class="animate" data-animate="fadeInUp">
+                Click the button below to upload your image files for analysis.
+              </p>
+            </div>
+            <div class="text-center">
+              <!-- Button to trigger file input -->
+              <button type="button" class="btn btn-primary" id="uploadButton">
+                Upload Images
+              </button>
+              <!-- Hidden file input -->
+              <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <input
+                    type="file"
+                    id="fileInput"
+                    name="image_files[]"
+                    accept="image/*"
+                    multiple
+                    style="display: none"
+                />
+                <button type="submit" style="display: none" id="submitBtn">
+                    Submit
+                </button>
+            </form>            
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="section animated-row" data-section="slide03">
+          <div class="section-inner">
+            <div class="welcome-box">
+              <h1 class="animate" data-animate="fadeInUp">Results</h1>
+              {% for explanation in explanations %}
+                  <p class="animate" data-animate="fadeInUp">
+                    Below are the uploaded images along with their LIME
+                    visualizations:
+                  </p>
+                  <h2>Original Image</h2>
+                  <img src="{{ explanation['original'] }}" alt="Original Image" width="400px">
+                  <h2>Heatmap</h2>
+                  <img src="{{ explanation['heatmap'] }}" alt="Heatmap" width="400px">
+                  <h2>Superimposed Image</h2>
+                  <img src="{{ explanation['superimposed'] }}" alt="Superimposed Image" width="400px">
+                  <h2>LIME Explanation</h2>
+                  <img src="{{ explanation['lime'] }}" alt="LIME Explanation" width="400px">
+              {% endfor %}
+            
+              <!-- <p class="animate" data-animate="fadeInUp">
+                Below are the uploaded images along with their LIME
+                visualizations:
+              </p>
+              <div class="row">
+                {% if results %}
+                {% for result in results %}
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Original Image</h5>
+                      <img
+                        src="{{ url_for('static', filename=result['image_path']) }}"
+                        alt="Original Image"
+                        class="img-fluid"
+                      />
+                      <h5 class="card-title">LIME Explanation</h5>
+                      <img
+                        src="{{ url_for('static', filename=result['lime_path']) }}"
+                        alt="LIME Explanation"
+                        class="img-fluid"
+                      /> -->
+                    <!-- </div> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+                {% endfor %}
+                {% else %}
+                <p>No results to display yet. Upload an image to get started!</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div id="social-icons">
+        <div class="text-right">
+          <ul class="social-icons">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/aashna-dogra-aaa93624a/"
+                title="Aashna Dogra"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/medha-agarwal-01b33725a/"
+                title="Medha Agarwal"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jagriti-gautam-7249b7249/"
+                title="Jagriti Gautam"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JavaScript Files -->
+      <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+      <script>
+        // Trigger the file input when the button is clicked
+        document
+          .getElementById("uploadButton")
+          .addEventListener("click", function () {
+            document.getElementById("fileInput").click();
+          });
+
+        // Automatically submit the form after files are selected
+        document
+          .getElementById("fileInput")
+          .addEventListener("change", function (event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+              console.log("Files selected:", files);
+              document.getElementById("submitBtn").click();
+            }
+          });
+      </script>
+    </div>
+  </body>
+</html>
