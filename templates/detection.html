@@ -64,7 +64,7 @@
       <header id="header">
         <div class="container-fluid">
           <div class="navbar">
-            <a href="#" id="logo" title="XAI">brainAI</a>
+            <a href="{{ url_for('home') }}" id="logo" title="XAI">brainAI</a>
             <div class="navigation-row">
               <nav id="navigation">
                 <button type="button" class="navbar-toggle">
@@ -98,6 +98,7 @@
           <div class="section-inner">
             <div class="welcome-box">
               <h1 class="welcome-title animate" data-animate="fadeInUp">Brain Tumor Detection</h1>
+              <p></p>
               <p class="animate" data-animate="fadeInUp">
                 With the help of our AI model we try to predict the possibility and detect the type of tumor as per your MRI scan upload.
               </p>

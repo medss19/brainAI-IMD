@@ -395,6 +395,7 @@ a#logo {
 .welcome-box {
   font-size:20px;
   line-height:1.7;
+  margin: 50px;
 }
 .welcome-first{
   font-size: 32px;
@@ -412,7 +413,7 @@ a#logo {
 }
 .welcome-title {
   font-weight: 700;
-  font-size: 120px;
+  font-size: 100px;
   margin-bottom: 10px;
   letter-spacing:0.02em;
 }
@@ -470,9 +471,10 @@ a#logo {
   margin-top: 80px;
   text-align:left;
   line-height:1.8;
+  font-size: 20px;
 }
 .about-contentbox span {
-  font-size: 24px;
+  font-size: 70px;
   text-transform: uppercase;
   font-weight: 300;
 }
@@ -526,7 +528,7 @@ a#logo {
   margin-bottom: 40px;
 }
 .title-block span {
-  font-size: 24px;
+  font-size: 80px;
   text-transform: uppercase;
   font-weight: 300;
 }
@@ -547,6 +549,10 @@ a#logo {
   height:100%;
 }
 .services-list .item:hover {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+.services-list .service-box:hover {
   background-color: #fff;
   color: #1e1e1e;
 }
