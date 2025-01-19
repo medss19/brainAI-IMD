@@ -36,3 +36,5 @@ Link to dataset for GANs and detection/classification - https://zenodo.org/recor
 
 4. **Early Detection**: The system identifies early signs of potential tumors, providing users with predictive analysis for timely diagnosis.
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
