@@ -1,5 +1,5 @@
 Flask==3.1.0
-keras==3.8.0
+keras==3.9.0
 lime==0.2.0.1
 matplotlib==3.7.5
 numpy==1.23.5
